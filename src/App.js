@@ -13,15 +13,22 @@ const newRandomCard = () => {
   }
 }
 
-
+function omit(obj, keyToOmit) {
+  return Object.entries(obj).reduce(
+    (newObj, [key, value]) =>
+        key === keyToOmit ? newObj : {...newObj, [key]: value},
+    {}
+  );
+}
 
 class App extends Component {
-  static defaultProps = {
-    store: {
-      lists: [],
-      allCards: {},
-    }
+  state = {
+    store: STORE,
   };
+
+  handleDeleteCard = (cardId) => {
+    const { lists, allCards } = this.state.store
+  }
 
   render() {
     const { store } = this.props
