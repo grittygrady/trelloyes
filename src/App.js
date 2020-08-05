@@ -48,10 +48,10 @@ class App extends Component {
     const newCard = newRandomCard()
 
     const newLists = this.state.store.lists.map(list => {
-      if(list.id === listId) {
-        return {
+      if (list.id === listId) {
+	    return {
           ...list,
-          cardsIds: [...list.cardIds, newCard.id]
+          cardIds: [...list.cardIds, newCard.id]
         };
       }
       return list;
@@ -90,7 +90,7 @@ class App extends Component {
           ))}
         </div>
       </main>
-    )
+    );
   }
 }
 
